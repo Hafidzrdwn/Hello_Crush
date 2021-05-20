@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Crush</title>
+    <style>
+        body{
+            background-color:rgb(255, 241, 241);
+          
+        }
+        .swal-overlay{
+            background: rgba(54, 118, 255, 0.664);
+        }
+
+        .swal-modal{
+            text-align: center;
+            background-color: lightyellow;
+        }
+
+        .swal-title{
+            font-size: 24px;
+            color: black;
+        }
+
+        .swal-text{
+            font-size: 24px;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .swal-button--confirm{
+            background-color: rgba(54, 118, 255, 0.664);
+            transition: .3s;
+        }
+
+        .swal-button--cancel{
+            background: lightsalmon;
+            color: white;
+            transition: .3s;
+        }
+
+        .swal-button--confirm:hover{
+            background-color: lightgreen !important;
+            color: gray;
+        }
+
+        .swal-button--cancel:hover{
+            background-color: salmon !important;
+        }
+
+        
+        .red-bg{
+            background: rgb(255, 201, 201);
+        }
+
+        .spec{
+            background: white;
+        }
+                 
+        .container{
+            width: 80%;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        @media (min-width: 768px) and (max-width: 1440px){
+            img.hero, button,h1{
+               display: none;
+            }
+            img.desk{
+                width: 55%;
+                margin: 10px auto;
+            }
+
+            .container{
+                flex-direction: column-reverse;
+            }
+            
+            p.danger{
+                display: block;
+                text-transform: uppercase;
+                font-size: 24px;
+                font-weight: bold;
+                font-family: 'Courier New', Courier, monospace;
+                line-height: 32px;
+            }
+
+            p.creator{
+                position: absolute;
+                right: 25px;
+                bottom: 0;
+            }
+        
+        }
+
+        @media  screen and (max-width:700px) {
+   
+
+        h1{
+            font-size: 35px;
+            text-transform: uppercase;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        img.desk{
+            display: none;
+        }
+
+        img.hero{
+            width: 100%;
+        }
+
+        p.danger{
+            display: none;
+        }
+
+        p.creator{
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button{
+            margin: 50px 0 65px;
+            height: 40px;
+         background-color: #4235F1;
+         color: white;
+         border: none;
+         border-radius: 20px;
+         transition: .5s;
+        }
+        button:hover{
+            background-color:#2d23c0 ;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello Crush App</h1>
+        <p class="danger">This application is not available on a desktop device, please open it on your mobile device</p>
+        <img class="hero" src="images/spread.svg" alt="couple">
+        <img class="desk" src="images/cancel.svg" alt="">
+        <button onclick="main()">START</button>
+        <p class="creator">created by <a target="_blank" href="https://www.instagram.com/hafidzrdwn/?hl=id">@Hafidzrdwn</a></p>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

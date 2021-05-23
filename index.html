@@ -4,152 +4,130 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Hello Crush</title>
-    <style>
-        body{
-            background-color:rgb(255, 241, 241);
-          
-        }
-        .swal-overlay{
-            background: rgba(54, 118, 255, 0.664);
-        }
-
-        .swal-modal{
-            text-align: center;
-            background-color: lightyellow;
-        }
-
-        .swal-title{
-            font-size: 24px;
-            color: black;
-        }
-
-        .swal-text{
-            font-size: 24px;
-            color: black;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .swal-button--confirm{
-            background-color: rgba(54, 118, 255, 0.664);
-            transition: .3s;
-        }
-
-        .swal-button--cancel{
-            background: lightsalmon;
-            color: white;
-            transition: .3s;
-        }
-
-        .swal-button--confirm:hover{
-            background-color: lightgreen !important;
-            color: gray;
-        }
-
-        .swal-button--cancel:hover{
-            background-color: salmon !important;
-        }
-
-        
-        .red-bg{
-            background: rgb(255, 201, 201);
-        }
-
-        .spec{
-            background: white;
-        }
-                 
-        .container{
-            width: 80%;
-            margin: 50px auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-        @media (min-width: 768px) and (max-width: 1440px){
-            img.hero, button,h1{
-               display: none;
-            }
-            img.desk{
-                width: 55%;
-                margin: 10px auto;
-            }
-
-            .container{
-                flex-direction: column-reverse;
-            }
-            
-            p.danger{
-                display: block;
-                text-transform: uppercase;
-                font-size: 24px;
-                font-weight: bold;
-                font-family: 'Courier New', Courier, monospace;
-                line-height: 32px;
-            }
-
-            p.creator{
-                position: absolute;
-                right: 25px;
-                bottom: 0;
-            }
-        
-        }
-
-        @media  screen and (max-width:700px) {
-   
-
-        h1{
-            font-size: 35px;
-            text-transform: uppercase;
-            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-
-        img.desk{
-            display: none;
-        }
-
-        img.hero{
-            width: 100%;
-        }
-
-        p.danger{
-            display: none;
-        }
-
-        p.creator{
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        button{
-            margin: 50px 0 65px;
-            height: 40px;
-         background-color: #4235F1;
-         color: white;
-         border: none;
-         border-radius: 20px;
-         transition: .5s;
-        }
-        button:hover{
-            background-color:#2d23c0 ;
-        }
-        }
-    </style>
 </head>
 <body>
+    <div class="info">
+        <i class="fas fa-arrow-left"></i>
+        <span>Klik profil creator!</span>
+    </div>
+    <div class="overlay">
+        <div class="cont">
+        <i class="fas fa-times"></i>
+        <h1>Creator Profile</h1>
+        <img src="images/estetik.jpg" alt="">
+        <p>Hafidz Ridwan Cahya</p>
+        <p>16 Years Old, Front End Dev</p>
+        <div class="icon">
+            <a target="_blank" href="https://www.instagram.com/hafidzrdwn/?hl=id"><i class="fab fa-instagram"></i></a> 
+            <a href="https://mobile.twitter.com/hafidzrdwn" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="progress_wrap">
+            <div class="progress_bar"></div>
+        </div>
+    </div>
+    </div>
     <div class="container">
+        <div class="profile">
+            <div class="wrap"><i id="ball" class="fas fa-circle"></i></div>
+            <img id="profile-img" src="images/hapedoi.jpg" alt="foto creator">
+        </div>
         <h1>Hello Crush App</h1>
         <p class="danger">This application is not available on a desktop device, please open it on your mobile device</p>
         <img class="hero" src="images/spread.svg" alt="couple">
         <img class="desk" src="images/cancel.svg" alt="">
         <button onclick="main()">START</button>
+        <h1>Kirim saran atau pesan</h1>
+        <form autocomplete="off" action="">
+            <div class="inputBox">
+                <input name="nama" type="text" required>
+                <span>Nama</span>
+            </div>
+            <div class="inputBox">  
+                <textarea name="pesan" id="" required></textarea>
+                <span>Ketik pesanmu</span>
+            </div>
+            <div class="inputBox">
+                <button type="submit">Kirim</button>
+            </div>
+        </form>
         <p class="creator">created by <a target="_blank" href="https://www.instagram.com/hafidzrdwn/?hl=id">@Hafidzrdwn</a></p>
     </div>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="script.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+        <script src="tata.js"></script>
+        <script src="https://kit.fontawesome.com/2e160f1ac0.js" crossorigin="anonymous"></script>
+        <script>
+            var info = document.querySelector(".info");
+            var close = document.querySelector(".cont > i");
+            var overlay = document.querySelector(".overlay");
+            var progressBar = document.querySelector(".progress_bar");
+            var profile = document.getElementById("profile-img");
+            var panel = document.querySelector(".cont");
+            var ball = document.getElementById("ball"); 
+            var down = 100;
+            let clicked = false;
+            window.onload = function () {
+                info.style.transform = "translateY(0px)";
+            }
+            
+          
+            
+
+            profile.onclick = function(){
+                ball.style.color ="rgb(6, 255, 6)";
+                overlay.style.display = "flex";
+                close.onclick = function () {
+                clicked = true;
+                overlay.style.display = "none";
+                ball.style.color = "red";
+            }
+                let trans = setInterval(function min(){
+                    down -=5;
+                    panel.onmouseenter = function () {
+                    clearInterval(trans);
+                }
+                panel.onmouseleave = function(){
+                     trans = setInterval(() => {
+                         down-=5;
+                         if(clicked === true){
+                    clearInterval(trans)
+                    down=100
+                   clicked = false;
+                }
+                         if(down <= -10){
+                    clearInterval(trans);
+                    if(down === -10){
+                    overlay.style.display = "none";
+                    ball.style.color = "red";
+                    down=100;
+                    if(down===100){
+                        clearInterval(trans);
+                    }
+                }
+                }
+                    progressBar.style.width = down + "%";
+                    console.log(down)
+                     }, 150);
+                }
+
+                    if(down <= -10){
+                    clearInterval(trans);
+                    if(down === -10){
+                    overlay.style.display = "none";
+                    ball.style.color = "red";
+                    down=100;
+                } 
+                }
+            
+                
+              console.log(down)
+                    progressBar.style.width = down + "%";
+                }, 150);
+            }
+        </script>
+        <script src="script.js"></script>
 </body>
 </html>
 
